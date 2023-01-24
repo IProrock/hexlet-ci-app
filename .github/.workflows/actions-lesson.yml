@@ -1,0 +1,12 @@
+name: Github actions test1
+on: push
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-nodev18
+      - run npm install
+      - run make setup
+      - run make test
+      - run make lint
